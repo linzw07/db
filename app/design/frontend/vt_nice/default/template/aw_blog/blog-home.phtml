@@ -1,0 +1,146 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/AW-LICENSE.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento community edition
+ * aheadWorks does not guarantee correct work of this extension
+ * on any other Magento edition except Magento community edition.
+ * aheadWorks does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   AW
+ * @package    AW_Blog
+ * @version    1.2.1
+ * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/AW-LICENSE.txt
+ */
+?> 
+<?php include_once 'helper.php'; ?>
+<?php $posts = $this->getPosts();?>
+<?php //echo count($posts); ?>
+<div class="wrap-blog-home next-pre">
+   <div class="color-opacity">
+      <div id="messages_product_view">
+         <?php Mage::app()->getLayout()->getMessagesBlock()->setMessages(Mage::getSingleton('customer/session')->getMessages(true)); ?> 
+         <?php echo Mage::app()->getLayout()->getMessagesBlock()->getGroupedHtml(); ?> 
+      </div>
+      <div class="container">
+         <div class="row">
+            <!--div class="row"-->
+               <div class="line-title-block">
+                  <div class="title-absolute" >
+                     <div>
+                        <h2 class="title-block"><span class="g-font">Latest Blogs</span></h2>
+                        <span class="text-des-title">Lorem ipsum dolor sit amet, news adipisi elit, set do eiusmod temp</span>
+                        <div class="line-mid"></div>
+                     </div>
+                  </div>
+               <div>
+			   <?php if (!empty($posts)): ?>
+			   <div class="content-blog">
+               <ol id="blog-list" class="products-list">
+                  <?php 
+                     foreach ($posts as $key=>$post): 	 	
+                     if ($key <= 4) {
+                     ?>
+                  <li class="item">
+                     <div class="item-inner">
+                        <?php  				
+                           $short_content = strip_tags($post->getShortContent());							
+                           $images = ImageHelper::getInlineImages($post->getShortContent());
+                           ?>
+                        <?php if(!empty($images)){ ?>
+                        <div class="wrap-link-item">
+							<a class="link-item" href="<?php echo $post->getAddress();?>" title="<?php echo $post->getTitle(); ?>">
+								<?php echo $images[0]; ?>
+							</a>  
+							<a class="read-more-fly" href="<?php echo $post->getAddress(); ?>" ><span><?php echo $this->__("Read more"); ?></span></a>
+                        </div>
+						<!--div class="test">
+							<span class="ro">123</span>
+						</div-->
+                        <?php } ?> 
+                        <div class="wrap-content">
+                           <div class="blog-name"><a href="<?php echo $post->getAddress(); ?>"><?php echo $post->getTitle(); ?></a></div>
+                           <div class="item-d">
+                              <div class="time-blog">
+                                 <?php
+                                    $_ct= new Zend_Date($post->getCreatedTime()); 
+                                    $str=explode(' ',$str);
+                                    echo "<span class='day-blog'>".date("d",mktime(0,0,0,$str[0],$str[1],$str[2]))."</span>.<span class='month-blog'>".date("M",mktime(0,0,0,$str[0],$str[1],$str[2]))."</span>.".date("Y",mktime(0,0,0,$str[0],$str[1],$str[2]));
+                                    ?>
+                              </div>
+                           </div>
+                           <span class="item-c"><?php echo $post->getCommentCount()." Comments"; ?></span>
+                           <?php ?>
+                           <span class="short-blog"><?php echo $short_content;?></span>
+                           <a class="read-more" href="<?php echo $post->getAddress(); ?>" ><span><?php echo $this->__("Read more"); ?></span></a>
+                        </div>
+                     </div>
+                  </li>
+                  <?php 
+                     }
+                     endforeach; ?>
+               </ol>
+               <div class="box-nav">
+                  <a href="#" class="prev">pre</a>
+                  <a href="#" class="next">next</a>
+               </div>
+			   </div><!-- end content-blog -->
+			   <?php endif ?>
+            </div>
+         </div>
+      <!--/div-->
+   </div>
+</div>
+</div>
+
+<script type="text/javascript">
+
+    jQuery(document).ready(function($) {
+        $('.wrap-blog-home #blog-list').owlCarousel({
+            items: 2,
+            itemsCustom: [ 
+                [0, 1], 
+                [480, 1], 
+                [768, 1], 
+                [992, 2], 
+                [1200, 2] 
+            ],
+            pagination: false,
+            slideSpeed : 800,
+            addClassActive: true,
+            scrollPerPage: false,
+            afterAction: function (e) {
+                if(this.$owlItems.length > this.options.items){
+                    $('.wrap-blog-home .box-nav').show();
+                }else{
+                    $('.wrap-blog-home .box-nav').hide();
+                }
+            }
+            //scrollPerPage: true,
+        });
+        $('.wrap-blog-home .box-nav .prev').on('click', function(e){
+            e.preventDefault();
+            $('.wrap-blog-home #blog-list').trigger('owl.prev');
+        });
+        $('.wrap-blog-home .box-nav .next').on('click', function(e){
+            e.preventDefault();
+            $('.wrap-blog-home #blog-list').trigger('owl.next');
+        });
+    });
+
+</script>
+
+</div>

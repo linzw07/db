@@ -1,0 +1,333 @@
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+  from {
+    bottom: -56px;
+  }
+  to {
+    bottom: 86px;
+  }
+}
+@keyframes mymove {
+  from {
+    bottom: -56px;
+  }
+  to {
+    bottom: 86px;
+  }
+}
+@-webkit-keyframes mymove-back {
+  from {
+    bottom: 86px;
+  }
+  to {
+    bottom: -56px;
+  }
+}
+@keyframes mymove-back {
+  from {
+    bottom: 86px;
+  }
+  to {
+    bottom: -56px;
+  }
+}
+@-webkit-keyframes bottom-to-top {
+  from {
+    top: 100px;
+  }
+  to {
+    top: 48px;
+  }
+}
+@keyframes bottom-to-top {
+  from {
+    top: 100px;
+  }
+  to {
+    top: 48px;
+  }
+}
+@-webkit-keyframes bottom-to-top-back {
+  from {
+    top: 48px;
+  }
+  to {
+    top: 100px;
+  }
+}
+@keyframes bottom-to-top-back {
+  from {
+    top: 48px;
+  }
+  to {
+    top: 100px;
+  }
+}
+@-webkit-keyframes bottom-to-top-home2 {
+  from {
+    top: 100px;
+  }
+  to {
+    top: 56px;
+  }
+}
+@keyframes bottom-to-top-home2 {
+  from {
+    top: 100px;
+  }
+  to {
+    top: 56px;
+  }
+}
+@-webkit-keyframes bottom-to-top-back-home2 {
+  from {
+    top: 56px;
+  }
+  to {
+    top: 100px;
+  }
+}
+@keyframes bottom-to-top-back-home2 {
+  from {
+    top: 56px;
+  }
+  to {
+    top: 100px;
+  }
+}
+@-webkit-keyframes bottom-to-top-header4 {
+  from {
+    top: 100px;
+  }
+  to {
+    top: 72px;
+  }
+}
+@keyframes bottom-to-top-header4 {
+  from {
+    top: 100px;
+  }
+  to {
+    top: 72px;
+  }
+}
+@-webkit-keyframes bottom-to-top-back-header4 {
+  from {
+    top: 72px;
+  }
+  to {
+    top: 100px;
+  }
+}
+@keyframes bottom-to-top-back-header4 {
+  from {
+    top: 72px;
+  }
+  to {
+    top: 100px;
+  }
+}
+@-webkit-keyframes bottom-to-top-header5 {
+  from {
+    top: 100px;
+  }
+  to {
+    top: 51px;
+  }
+}
+@keyframes bottom-to-top-header5 {
+  from {
+    top: 100px;
+  }
+  to {
+    top: 51px;
+  }
+}
+@-webkit-keyframes bottom-to-top-back-header5 {
+  from {
+    top: 51px;
+  }
+  to {
+    top: 100px;
+  }
+}
+@keyframes bottom-to-top-back-header5 {
+  from {
+    top: 51px;
+  }
+  to {
+    top: 100px;
+  }
+}
+@keyframes bottom-to-top-back-header3 {
+  from {
+    top: 56px;
+  }
+  to {
+    top: 100px;
+  }
+}
+@-webkit-keyframes bottom-to-top-header3 {
+  from {
+    top: 100px;
+  }
+  to {
+    top: 55px;
+  }
+}
+@keyframes bottom-to-top-header3 {
+  from {
+    top: 100px;
+  }
+  to {
+    top: 55px;
+  }
+}
+@-webkit-keyframes bottom-to-top-back-header3 {
+  from {
+    top: 55px;
+  }
+  to {
+    top: 100px;
+  }
+}
+@keyframes bottom-to-top-back-header3 {
+  from {
+    top: 55px;
+  }
+  to {
+    top: 100px;
+  }
+}
+@-webkit-keyframes move-to-top-header3 {
+  from {
+    bottom: -100px;
+  }
+  to {
+    bottom: -6px;
+  }
+}
+@keyframes move-to-top-header3 {
+  from {
+    bottom: -100px;
+  }
+  to {
+    bottom: -6px;
+  }
+}
+@-webkit-keyframes move-to-top {
+  from {
+    bottom: -100px;
+  }
+  to {
+    bottom: -6px;
+  }
+}
+@keyframes move-to-top {
+  from {
+    bottom: -100px;
+  }
+  to {
+    bottom: -6px;
+  }
+}
+@-webkit-keyframes move-to-top-home2 {
+  from {
+    bottom: -100px;
+  }
+  to {
+    bottom: -2px;
+  }
+}
+@keyframes move-to-top-home2 {
+  from {
+    bottom: -100px;
+  }
+  to {
+    bottom: -2px;
+  }
+}
+@-webkit-keyframes move-to-top-header4 {
+  from {
+    bottom: -100px;
+  }
+  to {
+    bottom: -2px;
+  }
+}
+@keyframes move-to-top-header4 {
+  from {
+    bottom: -100px;
+  }
+  to {
+    bottom: -2px;
+  }
+}
+@-webkit-keyframes move-to-top-header5 {
+  from {
+    bottom: -100px;
+  }
+  to {
+    bottom: -2px;
+  }
+}
+@keyframes move-to-top-header5 {
+  from {
+    bottom: -100px;
+  }
+  to {
+    bottom: -2px;
+  }
+}
+@-webkit-keyframes slide-box {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0px;
+  }
+}
+@keyframes slide-box {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0px;
+  }
+}
+@-webkit-keyframes slide-box-back {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -100%;
+  }
+}
+@keyframes slide-box-back {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -100%;
+  }
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}

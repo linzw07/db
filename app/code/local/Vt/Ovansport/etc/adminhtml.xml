@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+	<config>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<ovansport_cfg translate="title" module="ovansport">
+											<title>VT Ovansport Section</title>
+											<sort_order>150</sort_order>
+										</ovansport_cfg>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<!--<menu>
+			<ovansport translate="title" module="ovansport">
+				<title>Vt Ovansport Config</title>
+				<sort_order>100</sort_order>
+				<depends>
+					<module>Vt_Ovansport</module>
+				</depends>
+				<children>
+					<ovansport translate="title" module="ovansport">
+						<title>Vt Ovansport</title>
+						<action>adminhtml/system_config/edit/section/ovansport_cfg</action>
+						<sort_order>0</sort_order>
+					</ovansport>
+				</children>
+			</ovansport>
+		</menu>	-->	
+	</config>

@@ -1,0 +1,49 @@
+<?php
+/*------------------------------------------------------------------------
+ # SM Search Box Pro - Version 1.0
+ # Copyright (c) 2013 vnthemepro Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: vnthemepro Company
+ # Websites: http://www.vnthemepro.com
+-------------------------------------------------------------------------*/
+
+$cat_list = $this->getCategories();
+$options = $this->getConfigObject();?>
+<?php if( $options->isenabled == 1 ){?>
+	<div class="advanced-search">
+	<?php if( $options->pretext != ""){ ?>
+	<div class="serachbox-pro-pretext">
+		<?php echo $options->pretext;?>
+	</div>
+	<?php }?>	
+		<div class="inner-box">
+			<div class="labels"><?php echo $this->__('Search'); ?></div>
+			<form id="search_mini_form" action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" method="get">
+				<div class="form-search">
+					<?php $categorySearchHelper = $this->helper('searchboxpro'); ?>
+					<select name="<?php echo $categorySearchHelper->getCategoryParamName() ?>">
+						<option value=""><?php echo $this->__('All') ?></option>
+
+						<?php foreach ( $cat_list as $cat):?>
+							<?php if($cat['label'] =='All' || $cat['label'] == "- - Blog" || $cat['label']=="Default Category" || $cat['label'] == "- - Contact" || $cat['label'] == "- - About us"){
+								continue;
+							}?>
+							<option value="<?php echo $cat['value'];?>"><?php echo $cat['label']; ?></option>
+						<?php endforeach;?>
+						
+						
+					</select>
+					<input size="30" id="search" type="text" name="<?php echo $this->helper('catalogSearch')->getQueryParamName() ?>" class="input-text" onfocus="if(this.value=='Enter your keyword...') this.value='';" onblur="if(this.value=='') this.value='Enter your keyword...';" value="Enter your keyword..."  />
+					<button type="submit" title="<?php echo $this->__('Search') ?>" class="button form-button"><span><span><?php echo $this->__('Search') ?></span></span></button>
+					<div id="search_autocomplete" class="search-autocomplete"></div>
+				</div>
+			</form>
+		</div>
+		<?php if($options->posttext!= ''){ ?>
+			<div class="serachbox-pro-posttext">
+				<?php echo $options->posttext;?>
+			</div>
+		<?php }?>
+	</div>
+<?php }?>
+

@@ -1,0 +1,210 @@
+
+<?php $pagesize  = Mage::app()->getRequest()->getParam('pagesize');?>
+<?php $id_cat    = Mage::app()->getRequest()->getParam('id_cat');?>
+<?php $sort = Mage::app()->getRequest()->getParam('sort');?>
+<?php $item = Mage::app()->getRequest()->getParam('item');?>
+<?php if($pagesize!=''):?>
+<?php
+$category = Mage::getModel ('catalog/category')->load ($id_cat);
+ $_productCollection = Mage::getResourceModel('catalog/product_collection')
+                  ->AddAttributeToSelect('*')
+                  ->AddCategoryFilter($category)
+                  -> AddAttributeToSort ($sort, 'asc');
+$_productCollection->clear()
+                   ->setPageSize($pagesize)
+                   ->load();
+                   $uniqued = rand().time();
+                   ?>
+<div class="content-loadmore row">
+        <div class="products-grid">
+            <?php foreach($_productCollection as $_product) : ?>
+            
+
+                <?php
+                $now = date("Y-m-d H:m:s");
+                $newsFrom= $_product->getNewsFromDate();
+                $newsTo=  $_product->getNewsToDate();
+                $specialprice = Mage::getModel('catalog/product')->load($_product->getId())->getSpecialPrice(); 
+                $special_from_date = $_product->getSpecialFromDate();
+                $special_to_date = $_product->getSpecialToDate();    
+                ?>
+                <div class="item col-sm-<?php echo $item?>">
+                    <?php   
+                        if($newsFrom != ''){                            
+                        if (($now>=$newsFrom && $now<=$newsTo)||($now>=$newsFrom && $newsTo =='')){  ?>
+                            <div class='new-item'><?php echo $this->__("new"); ?></div>
+                        <?php }
+                        }else{
+                        if(($newsTo != "") && $newsTo >= $now){ 
+                        ?>
+                            <div class='new-item'><?php echo $this->__("new"); ?></div>
+                        <?php }
+                        }?>
+                        <?php 
+                        if (($specialprice && ($special_from_date <= $now) && ($special_to_date >= $now || $special_to_date =="" ))){?>
+                            <div class='sale-item'>
+                               <span><?php echo $this->__("sale");?></span>
+                            </div>
+                     <?php } ?>  
+                    <div class="item-wrap">
+                    <div class="item-image">   
+                        <a class="product-image" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>">
+                        <img class="first_image" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(250,300); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /> 
+                        <?php
+                            $i=0;
+                            $product = Mage::getModel('catalog/product')->load($_product->getId());
+                            foreach ($product->getMediaGalleryImages() as $image) {
+                                $i++;
+                                $imagesub=$image->getUrl();
+                                if($i==2){
+                                        break;
+                                }
+                            } 
+                        ?>      
+
+                        <img class="secon-image" src="<?php echo $imagesub?>" width="250" height="300" />
+                        </a>
+                        <div class="item-btn">
+                       
+                            <?php if($_product->isSaleable()): ?>
+                                <a title="<?php echo $this->__('Add to cart') ?>" class="btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><?php echo $this->__('Add to Cart') ?></a>
+                            <?php else: ?>
+                                <a href="#" class="availability out-of-stock"><?php echo $this->__('Out stock') ?></a>
+                            <?php endif; ?>
+                             <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                               <a title="<?php echo $this->__('Add to wishlist') ?>" href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php //echo $this->__('Add to Wishlist') ?></a>
+                            <?php endif; ?>
+                           <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+                            <a title="<?php echo $this->__('Add to compare') ?>" href="<?php echo $_compareUrl ?>" class="link-compare"><?php //echo $this->__('Add to Compare') ?></a>
+                            <?php endif; ?>
+                            
+                        </div>  
+                    </div>   
+                       
+                    <div class="pro-info">
+                        <div class="pro-inner">
+                           <div class="pro-title product-name"><a href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->escapeHtml($_product->getName()) ?></a></div>    
+                           <div class="pro-content">                                                       
+                                <?php echo $this->getReviewsSummaryHtml($_product,'short',true) ?>
+                                <div class="wrap-price"> 
+                                <?php echo $this->getPriceHtml($_product, true) ?> 
+                                </div>
+                           </div>
+                        </div>                                                                        
+                    </div>
+                    
+                </div><!--end item wrap -->
+                </div>
+            <?php endforeach; ?>
+        </div>
+        
+    </div>
+
+<?php else:?>
+<?php
+$catid    = Mage::app()->getRequest()->getParam('catid');
+$category = Mage::getModel ('catalog/category')->load ($catid);
+ $_productCollection = Mage::getResourceModel('catalog/product_collection')
+                  ->AddAttributeToSelect('*')
+                  ->AddCategoryFilter($category);
+
+if($_productCollection->count()==0)
+{
+    echo 'no product';
+}
+
+
+?>
+<?php if($_productCollection->count()){ ?>
+
+<div class="slider-inner">
+    <h2>
+        Collection:<span><?php echo $category->getName()?></span></h2> 
+    <div class="container-slider">
+         <div class="products-grid">
+        <?php foreach($_productCollection as $_product) : 
+        	
+        ?>
+            <?php
+            $now = date("Y-m-d H:m:s");
+            $newsFrom= $_product->getNewsFromDate();
+            $newsTo=  $_product->getNewsToDate();
+            $specialprice = Mage::getModel('catalog/product')->load($_product->getId())->getSpecialPrice(); 
+            $special_from_date = $_product->getSpecialFromDate();
+            $special_to_date = $_product->getSpecialToDate();    
+            ?>
+            <div class="item">
+            	<?php   
+                    if($newsFrom != ''){                            
+                    if (($now>=$newsFrom && $now<=$newsTo)||($now>=$newsFrom && $newsTo =='')){  ?>
+                        <div class='new-item'><?php echo $this->__("new"); ?></div>
+                    <?php }
+                    }else{
+                    if(($newsTo != "") && $newsTo >= $now){ 
+                    ?>
+                        <div class='new-item'><?php echo $this->__("new"); ?></div>
+                    <?php }
+                    }?>
+                    <?php 
+                    if (($specialprice && ($special_from_date <= $now) && ($special_to_date >= $now || $special_to_date =="" ))){?>
+                        <div class='sale-item'>
+                            <span><?php echo $this->__("slae");?></span>
+                        </div>
+                 <?php } ?>  
+        		<div class="item-wrap">
+                <div class="item-image">   
+                     <a class="product-image" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>">
+                        <img class="first_image" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(195,240); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /> 
+                        <?php
+                            $i=0;
+                            $product = Mage::getModel('catalog/product')->load($_product->getId());
+                            foreach ($product->getMediaGalleryImages() as $image) {
+                                $i++;
+                                $imagesub=$image->getUrl();
+                                if($i==2){
+                                        break;
+                                }
+                            } 
+                        ?>      
+
+                        <img class="secon-image" src="<?php echo $imagesub?>" width="195" height="240" />
+                        </a>
+                    <div class="item-btn">
+                       
+                            <?php if($_product->isSaleable()): ?>
+                                <a title="<?php echo $this->__('Add to cart') ?>" class="btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><?php echo $this->__('Add to Cart') ?></a>
+                            <?php else: ?>
+                                <a href="#" class="availability out-of-stock"><?php echo $this->__('Out of stock') ?></a>
+                            <?php endif; ?>
+                             <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                               <a title="<?php echo $this->__('Add to wishlist') ?>" href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php //echo $this->__('Add to Wishlist') ?></a>
+                            <?php endif; ?>
+                           <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+                            <a title="<?php echo $this->__('Add to compare') ?>" href="<?php echo $_compareUrl ?>" class="link-compare"><?php //echo $this->__('Add to Compare') ?></a>
+                            <?php endif; ?>
+                        </div>
+                </div>   
+                <div class="pro-info">
+                    <div class="pro-inner">
+                       <div class="pro-title product-name"><a href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->escapeHtml($_product->getName()) ?></a></div>    
+                       <div class="pro-content">    
+                            <div class="wrap-price"> 
+                            <?php echo $this->getPriceHtml($_product, true) ?> 
+                            </div>
+                             <?php echo $this->getReviewsSummaryHtml($_product,'short',true) ?>
+                       </div>
+                    </div>                                                                        
+                </div>
+                
+            </div><!--end item wrap -->
+            </div>
+        <?php endforeach; ?>
+        </div>
+    </div>
+    <div class="navslider">
+        <a class="prev" href="#">Prev</a>
+        <a class="next" href="#">Next</a>
+    </div>
+</div>
+<?php }?>
+<?php endif;?>

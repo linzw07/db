@@ -1,0 +1,115 @@
+	<button type="button" class="sidebar"><span>menu</span></button>
+    <div class="mobile-sidebar">
+    	<button type="button" class="close-menu"><span>close menu</span></button>
+	    <ul class="nav-menu clearfix">
+	    <li >
+	        <a  href="http://trademe.dev/index.php/" title="Home"><span>Home</span></a>
+	    </li>
+	    	        <li class="level0 nav-1 active parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)">
+<a href="http://trademe.dev/index.php/womens.html">
+<span>Women's</span>
+</a>
+<ul class="level0">
+<li class="level1 nav-1-1 first">
+<a href="http://trademe.dev/index.php/womens/sports-outdoor.html">
+<span>Sports &amp; Outdoor</span>
+</a>
+</li><li class="level1 nav-1-2">
+<a href="http://trademe.dev/index.php/womens/sed-do-eiusmod.html">
+<span>Sed do eiusmod</span>
+</a>
+</li><li class="level1 nav-1-3 last">
+<a href="http://trademe.dev/index.php/womens/lorem-ipsum-dolor.html">
+<span>Lorem ipsum dolor</span>
+</a>
+</li>
+</ul>
+</li>	    	        <li class="level0 nav-2 parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)">
+<a href="http://trademe.dev/index.php/men.html">
+<span>Men's</span>
+</a>
+<ul class="level0">
+<li class="level1 nav-2-1 first parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)">
+<a href="http://trademe.dev/index.php/men/lorem-ipsum-dolor.html">
+<span>Lorem ipsum dolor</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-2-1-1 first">
+<a href="http://trademe.dev/index.php/men/lorem-ipsum-dolor/category-demo-1.html">
+<span>Category Demo 1</span>
+</a>
+</li><li class="level2 nav-2-1-2">
+<a href="http://trademe.dev/index.php/men/lorem-ipsum-dolor/category-demo-2.html">
+<span>Category Demo 2</span>
+</a>
+</li><li class="level2 nav-2-1-3">
+<a href="http://trademe.dev/index.php/men/lorem-ipsum-dolor/category-demo-3.html">
+<span>Category Demo 3</span>
+</a>
+</li><li class="level2 nav-2-1-4 last">
+<a href="http://trademe.dev/index.php/men/lorem-ipsum-dolor/category-demo-4.html">
+<span>Category Demo 4</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-2-2">
+<a href="http://trademe.dev/index.php/men/sit-amet-conse.html">
+<span>Sit amet conse</span>
+</a>
+</li><li class="level1 nav-2-3">
+<a href="http://trademe.dev/index.php/men/ctetur-adipisicing.html">
+<span>Ctetur adipisicing</span>
+</a>
+</li><li class="level1 nav-2-4">
+<a href="http://trademe.dev/index.php/men/sed-do-eiusmod.html">
+<span>Sed do eiusmod</span>
+</a>
+</li><li class="level1 nav-2-5 last">
+<a href="http://trademe.dev/index.php/men/tempor-incididunt.html">
+<span>Tempor incididunt</span>
+</a>
+</li>
+</ul>
+</li>	    	        <li class="level0 nav-3">
+<a href="http://trademe.dev/index.php/kids.html">
+<span>Kids</span>
+</a>
+</li>	    	        <li class="level0 nav-4">
+<a href="http://trademe.dev/index.php/sale.html">
+<span>Sale</span>
+</a>
+</li>	    	        <li class="level0 nav-5">
+<a href="http://trademe.dev/index.php/blog.html">
+<span>Blog</span>
+</a>
+</li>	    	        <li class="level0 nav-6">
+<a href="http://trademe.dev/index.php/contact.html">
+<span>Contact Us</span>
+</a>
+</li>	    	        <li class="level0 nav-7">
+<a href="http://trademe.dev/index.php/about-us.html">
+<span>About us</span>
+</a>
+</li>	    	    </ul>	   
+	</div>
+	 <script type="text/javascript">
+        jQuery(document).ready(function($){
+            $('body').append('<div class="block-slidebar"></div>');
+            $('.block-slidebar').html($('.mobile-sidebar').html());
+            $('.mobile-sidebar').remove();            
+            $('.sidebar').click(function(){
+                if($('body').hasClass('show-menu')){
+                    $('body').removeClass('show-menu');
+                }else{
+                    $('body').addClass('show-menu');
+                }
+            });
+            $('.close-menu').click(function(){
+                if($('body').hasClass('show-menu')){
+                    $('body').removeClass('show-menu');
+                }else{
+                    $('body').addClass('show-menu');
+                }
+            });
+        });
+    </script>

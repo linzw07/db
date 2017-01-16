@@ -1,0 +1,289 @@
+<div class="wrap-element-fisrst-footer">
+			<div class="footer-homepage01">
+			 
+<div class="wrap-blog-home next-pre">
+   <div class="color-opacity">
+      <div id="messages_product_view">
+          
+          
+      </div>
+      <div class="container">
+         <div class="row">
+            <!--div class="row"-->
+               <div class="line-title-block">
+                  <div class="title-absolute" >
+                     <div>
+                        <h2 class="title-block"><span class="g-font">Latest Blogs</span></h2>
+                        <span class="text-des-title">Lorem ipsum dolor sit amet, news adipisi elit, set do eiusmod temp</span>
+                        <div class="line-mid"></div>
+                     </div>
+                  </div>
+               <div>
+			   			   <div class="content-blog">
+               <ol id="blog-list" class="products-list">
+                                    <li class="item">
+                     <div class="item-inner">
+                                                                        <div class="wrap-link-item">
+							<a class="link-item" href="http://trademe.dev/index.php/blog/blog-1/" title="Cupidatat non proident sed do eiusmod tempor incididunt">
+								<img src="http://trademe.dev/media/wysiwyg/images/slide/blog1.jpg" alt="" />							</a>  
+							<a class="read-more-fly" href="http://trademe.dev/index.php/blog/blog-1/" ><span>Read more</span></a>
+                        </div>
+						<!--div class="test">
+							<span class="ro">123</span>
+						</div-->
+                         
+                        <div class="wrap-content">
+                           <div class="blog-name"><a href="http://trademe.dev/index.php/blog/blog-1/">Cupidatat non proident sed do eiusmod tempor incididunt</a></div>
+                           <div class="item-d">
+                              <div class="time-blog">
+                                 <span class='day-blog'>01</span>.<span class='month-blog'>Jan</span>.1970                              </div>
+                           </div>
+                           <span class="item-c">1 Comments</span>
+                                                      <span class="short-blog">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt . Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</span>
+                           <a class="read-more" href="http://trademe.dev/index.php/blog/blog-1/" ><span>Read more</span></a>
+                        </div>
+                     </div>
+                  </li>
+                                    <li class="item">
+                     <div class="item-inner">
+                                                                        <div class="wrap-link-item">
+							<a class="link-item" href="http://trademe.dev/index.php/blog/blog-2/" title="Excepteur sint ipsum dolor sit amet conse ctetur adipisicing elit">
+								<img src="http://trademe.dev/media/wysiwyg/images/slide/blog2.jpg" alt="" />							</a>  
+							<a class="read-more-fly" href="http://trademe.dev/index.php/blog/blog-2/" ><span>Read more</span></a>
+                        </div>
+						<!--div class="test">
+							<span class="ro">123</span>
+						</div-->
+                         
+                        <div class="wrap-content">
+                           <div class="blog-name"><a href="http://trademe.dev/index.php/blog/blog-2/">Excepteur sint ipsum dolor sit amet conse ctetur adipisicing elit</a></div>
+                           <div class="item-d">
+                              <div class="time-blog">
+                                 <span class='day-blog'>30</span>.<span class='month-blog'>Nov</span>.1999                              </div>
+                           </div>
+                           <span class="item-c">1 Comments</span>
+                                                      <span class="short-blog">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt . Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</span>
+                           <a class="read-more" href="http://trademe.dev/index.php/blog/blog-2/" ><span>Read more</span></a>
+                        </div>
+                     </div>
+                  </li>
+                                    <li class="item">
+                     <div class="item-inner">
+                                                                        <div class="wrap-link-item">
+							<a class="link-item" href="http://trademe.dev/index.php/blog/blog-3/" title="Rem ipsum dolor sit dolor sit amet conse ctetur adipisicing elit">
+								<img src="http://trademe.dev/media/wysiwyg/images/slide/blog3.jpg" alt="" />							</a>  
+							<a class="read-more-fly" href="http://trademe.dev/index.php/blog/blog-3/" ><span>Read more</span></a>
+                        </div>
+						<!--div class="test">
+							<span class="ro">123</span>
+						</div-->
+                         
+                        <div class="wrap-content">
+                           <div class="blog-name"><a href="http://trademe.dev/index.php/blog/blog-3/">Rem ipsum dolor sit dolor sit amet conse ctetur adipisicing elit</a></div>
+                           <div class="item-d">
+                              <div class="time-blog">
+                                 <span class='day-blog'>01</span>.<span class='month-blog'>Jan</span>.1970                              </div>
+                           </div>
+                           <span class="item-c">1 Comments</span>
+                                                      <span class="short-blog">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt . Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</span>
+                           <a class="read-more" href="http://trademe.dev/index.php/blog/blog-3/" ><span>Read more</span></a>
+                        </div>
+                     </div>
+                  </li>
+                                    <li class="item">
+                     <div class="item-inner">
+                                                                        <div class="wrap-link-item">
+							<a class="link-item" href="http://trademe.dev/index.php/blog/blog-4/" title="Sed do eiusmod amet conse ctetur adipisicing elit, sed do eiusmod tempor">
+								<img src="http://trademe.dev/media/wysiwyg/images/slide/blog4.jpg" alt="Blog-Img" />							</a>  
+							<a class="read-more-fly" href="http://trademe.dev/index.php/blog/blog-4/" ><span>Read more</span></a>
+                        </div>
+						<!--div class="test">
+							<span class="ro">123</span>
+						</div-->
+                         
+                        <div class="wrap-content">
+                           <div class="blog-name"><a href="http://trademe.dev/index.php/blog/blog-4/">Sed do eiusmod amet conse ctetur adipisicing elit, sed do eiusmod tempor</a></div>
+                           <div class="item-d">
+                              <div class="time-blog">
+                                 <span class='day-blog'>30</span>.<span class='month-blog'>Nov</span>.1999                              </div>
+                           </div>
+                           <span class="item-c">1 Comments</span>
+                                                      <span class="short-blog">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt . Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</span>
+                           <a class="read-more" href="http://trademe.dev/index.php/blog/blog-4/" ><span>Read more</span></a>
+                        </div>
+                     </div>
+                  </li>
+                                 </ol>
+               <div class="box-nav">
+                  <a href="#" class="prev">pre</a>
+                  <a href="#" class="next">next</a>
+               </div>
+			   </div><!-- end content-blog -->
+			               </div>
+         </div>
+      <!--/div-->
+   </div>
+</div>
+</div>
+
+<script type="text/javascript">
+
+    jQuery(document).ready(function($) {
+        $('.wrap-blog-home #blog-list').owlCarousel({
+            items: 2,
+            itemsCustom: [ 
+                [0, 1], 
+                [480, 1], 
+                [768, 1], 
+                [992, 2], 
+                [1200, 2] 
+            ],
+            pagination: false,
+            slideSpeed : 800,
+            addClassActive: true,
+            scrollPerPage: false,
+            afterAction: function (e) {
+                if(this.$owlItems.length > this.options.items){
+                    $('.wrap-blog-home .box-nav').show();
+                }else{
+                    $('.wrap-blog-home .box-nav').hide();
+                }
+            }
+            //scrollPerPage: true,
+        });
+        $('.wrap-blog-home .box-nav .prev').on('click', function(e){
+            e.preventDefault();
+            $('.wrap-blog-home #blog-list').trigger('owl.prev');
+        });
+        $('.wrap-blog-home .box-nav .next').on('click', function(e){
+            e.preventDefault();
+            $('.wrap-blog-home #blog-list').trigger('owl.next');
+        });
+    });
+
+</script>
+
+</div>		</div>
+		
+ <div class="container">
+    <div class="row">
+        <div class="row">
+	        <div class="inner-top">	 	        	
+		        <div class="block block-se col-lg-4 col-md-4 col-sm-4 col-xs-12">       	
+		        	<div class="block-title block-services"><span class="g-font">Services</span></div>
+<div class="block-content">
+<ul>
+<li class="no-padding"><span>Lorem ipsum ex vix illud nonummy, novum tation et his. At vix scriptaset patrioque scribentur, at pro fugit erts verterem molestiae.</span></li>
+<li class="item-service-1"><span>Superfast delivery 2-4</span></li>
+<li class="item-service-2"><span>Free shipping</span></li>
+<li class="item-service-3"><span>Switch to pay in 40 days</span></li>
+</ul>
+<div class="logo-payment"><img src="http://trademe.dev/media/wysiwyg/images/payment.png" alt="" /></div>
+</div>		        </div>
+				<div class="block block-in col-lg-2 col-md-2 col-sm-2 col-xs-12">       	
+		        	<div class="block-title"><span class="g-font">Information</span></div>
+<div class="block-content">
+<ul>
+<li><a href="http://trademe.dev/index.php/about-us.html/">About Us</a></li>
+<li><a href="http://trademe.dev/index.php/contact.html/">Contact Us</a></li>
+<li><a href="#">Payment options</a></li>
+<li><a href="#">Shipping and delivery</a></li>
+<li><a href="#">Returns</a></li>
+<li><a href="#">Shipping</a></li>
+</ul>
+</div>		        </div>
+				<div class="block block-ma col-lg-2 col-md-2 col-sm-2 col-xs-12">       	
+		        	<div class="block-title"><span class="g-font">Account</span></div>
+<div class="block-content">
+<ul>
+<li><a href="#">Order Status</a></li>
+<li><a href="#">My Order History</a></li>
+<li><a href="#">My Favorites</a></li>
+<li><a href="#">Promo codes</a></li>
+<li><a href="#">Payments</a></li>
+<li><a href="#">Returns</a></li>
+</ul>
+</div>		        </div>
+	        	<div class="block block-cu col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	        	<div class="block-title"><span class="g-font">Shop info</span></div>
+<div class="block-content">
+<ul>
+<li class="item1"><span>1040 Piclue Spruceth Laneng Laurel 1650 USA</span></li>
+<li class="item2"><span>0110-565-5432</span></li>
+<li class="item21"><span>0220-566-5439</span></li>
+<li class="item3"><a href="mailto:contact@menice.com">contact@menice.com</a></li>
+<li class="item4"><a href="#">www.sitename.com</a></li>
+<li class="button-link-contact"><a href="#">Contact Form</a></li>
+</ul>
+</div>	        	</div>
+	        		        	<!--div class="block block-social-footer col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	        		        	</div>
+				<div class="block block-ma col-lg-2 col-md-2 col-sm-3 col-xs-12">       	
+		        			        </div>
+		        <div class="block block-od col-lg-2 col-md-2 col-sm-3 col-xs-12">
+	        		        	</div>
+	        	<div class="block block-in col-lg-2 col-md-2 col-sm-3 col-xs-12">
+	        		        	</div>
+	        	<div class="block block-cu col-lg-2 col-md-2 col-sm-3 col-xs-12">
+	        		        	</div-->
+	        		        </div>	
+							<a id="gototop" href="#" title="Go to Top">Top</a>
+					</div>
+	</div>
+</div>	
+<div class="inner-bottom">		
+	<div class="container">
+		<div class="row">
+	        <div class="row">    
+	        					<address class="col-lg-6 col-md-7 col-sm-12 col-xs-12">
+				<div class="block-footer-quicklink">
+<ul>
+<li><a href="#"><span class="item-quick item-first">Site Map</span></a></li>
+<li><a href="#"><span class="item-quick">Search Terms</span></a></li>
+<li><a href="#"><span class="item-quick">Advanced Search</span></a></li>
+<li><a href="#"><span class="item-quick">Order and Returns</span></a></li>
+<li><a href="#"><span class="item-quick item-last">Contact Us</span></a></li>
+</ul>
+</div>				<div class="copy-right">
+				© 2015 Magento Store Demo. All Rights Reserved - Designed by: <a title="7uptheme.Com!" href="http://themeforest.net/user/7-Up/portfolio?WT.ac=portfolio_item&WT.z_author=7-Up">7-Up</a>
+				</div>
+				</address>
+				<div class="block-fanpage col-lg-6 col-md-5 col-sm-12 col-xs-12">
+				<ul>
+<li><a class="item-fac" href="#"><span>1</span></a></li>
+<li><a class="item-twi" href="#"><span>2</span></a></li>
+<li><a class="item-in" href="#"><span> 3</span></a></li>
+<li><a class="item-pri" href="#"><span>4</span></a></li>
+<li><a class="item-goo" href="#"><span>5</span></a></li>
+<li><a class="item-rss" href="#"><span>6</span></a></li>
+<li><a class="item-app" href="#"><span>7</span></a></li>
+</ul>				</div>
+								<!--div class="block col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									</div-->	
+							</div>
+		</div>
+	</div>
+</div>
+</div>
+<script type="text/javascript">
+	jQuery(document).ready(function($){  
+		$("#gototop").hide();
+		$(function () {
+			var wh = $(window).height();
+			var whtml =  $(document).height();			
+			$(window).scroll(function () {				
+				if ($(this).scrollTop() > whtml/10) {
+					$('#gototop').fadeIn();
+				} else {
+					$('#gototop').fadeOut();
+				}
+			});
+			$('#gototop').click(function () {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 800);
+				return false;
+			});
+		});
+	});
+</script>

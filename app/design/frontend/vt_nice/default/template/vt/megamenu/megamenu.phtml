@@ -1,0 +1,85 @@
+<?php
+/*------------------------------------------------------------------------
+ # VT MegaMenu - Version 1.0
+ * Copyright (C) 2013 The VT Theme. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: VT Theme
+ * Websites: http://www.vttheme.com
+-------------------------------------------------------------------------*/
+$prefix = Vt_Megamenu_Model_System_Config_Source_Html::PREFIX;
+$smarthelper= Mage::helper('megamenu/utils');
+$itemsStartLv = $this->getItems();
+$config = $this->getConfigObject();
+$uq = uniqid($prefix.'menu');
+if($config['theme']==Vt_Megamenu_Model_System_Config_Source_ListTheme::HORIZONTAL){
+$theme = 'horizontal';
+}elseif($config['theme']==Vt_Megamenu_Model_System_Config_Source_ListTheme::VERTICAL){
+$theme = 'vertical';
+}
+$instance	= rand().time();
+?>
+<?php if(count($itemsStartLv)):?>
+<div id="<?php echo $uq; ?>" class="vt-megamenu-wrap <?php echo $theme ?>-menu<?php echo ($config['effect'])?' using-effect':' no-effect'; ?>">
+	<ul class="mainnav mega-nav">
+	<?php
+	$i = 0;
+	foreach($itemsStartLv as $itemStartLv){
+		$i++;
+		$link = 'javascript:void(0)';
+		$homeClass = '';
+		$homeact=false;
+		if($this->hasLinkType($itemStartLv)){
+			$link = $this->getLinkOfType($itemStartLv);
+			if($link.'/' == Mage::helper('core/url')->getHomeUrl() || $link.'/' == $this->getUrl('home') || strpos($link, 'home') || strpos($link.'/', 'index.php/?' ) || $link.'/' == '/'){
+				$homeClass = ' nav-home';
+				$link = Mage::helper('core/url')->getHomeUrl();
+				$currentUrl = Mage::helper('core/url')->getCurrentUrl();
+				$baseu=Mage::getBaseUrl();
+				$home_url = Mage::helper('core/url')->getHomeUrl();
+				//if(!strpos($baseu,'index.php')){
+					$baseu=substr($baseu,0, strlen($baseu)-10);
+				//	echo 123;
+				//}
+				if($currentUrl==$baseu||$link == $currentUrl || $currentUrl == $this->getUrl('home') || strpos($currentUrl, 'home') || strpos($currentUrl, 'index.php/?' ) || $currentUrl == '/'){
+					$homeact=true;
+				}
+				
+			}
+		}?>
+		<li class="level0 <?php if($homeact) echo 'active '; ?><?php echo (!$this->isLeaf($itemStartLv))?' parent':''; ?><?php echo ($this->isAlignRight($itemStartLv))?' align-right':''?><?php echo ($this->isActived($itemStartLv))?' active':'' ?><?php echo ($itemStartLv->custom_class!="")?' '.$itemStartLv->custom_class:''; ?><?php echo ($i==count($itemsStartLv))?' last':'';?>">
+			<a class="<?php echo ($this->isActived($itemStartLv))?'actived':'' ?><?php echo $homeClass; ?>"
+				href="<?php echo $link; ?>"
+				<?php echo ($this->hasLinkType($itemStartLv))?$smarthelper->getTargetAttr($itemStartLv->getTarget()):'' ?> 
+				id="<?php echo $prefix.$itemStartLv->getId()?>">
+
+				<span class="menu-title">
+					<?php echo $itemStartLv->getTitle() ?>
+				</span>
+			</a>
+			<?php
+			$childItems = Mage::helper('megamenu')->getChildsDirectlyByItem($itemStartLv);?>
+			<?php
+			if($this->isLeaf($itemStartLv) OR !count($childItems->getItems())){ ?>
+				<?php
+				if($this->hasConntentType($itemStartLv)){?>
+					<div class="mega-content-wrap megamenu-col megamenu-<?php echo $itemStartLv->getColsNb()?>col<?php echo ($this->isAlignRight($itemStartLv))?' align-right':''?><?php echo ($this->isActived($itemStartLv))?' active':'' ?><?php echo ' level'.($itemStartLv->getDepth())?><?php echo (!$this->isLeaf($itemStartLv) || ($this->hasConntentType($itemStartLv)))?' have-spetitle':'' ?><?php echo ($itemStartLv->custom_class!="")?' '.$itemStartLv->custom_class:''; ?>" >
+						<?php if($itemStartLv->getShowTitle()==Vt_Megamenu_Model_System_Config_Source_Status::STATUS_ENABLED){	?>
+						<div class="mega-title"><span><?php echo $itemStartLv->getTitle()?></span></div>
+						<?php } ?>
+						<div class="mega-content"><?php echo $this->getContentType($itemStartLv) ?></div>
+					</div>
+				<?php
+				}
+				continue;
+			} ?>
+			<?php echo $this->getItemHtml($itemStartLv, ($itemStartLv->getDepth())?true:false); ?>
+		</li>
+	<?php
+	}?>
+	</ul>
+</div>
+<?php else: ?>
+<p class="note-msg"><?php echo $this->__('There are no items matching the selection.') ?></p>
+<?php endif; ?>
+
+

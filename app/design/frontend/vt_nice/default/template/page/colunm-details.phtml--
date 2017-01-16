@@ -1,0 +1,23 @@
+	<?php $colunmdt=Mage::getStoreConfig('ovansport_cfg/general/product_page_view');
+		//$colunmdt="one_column";
+		if($_GET['colpage'])  $colunmdt=$_GET['colpage'];
+	?>
+	<?php
+	switch ($colunmdt) {
+		case 'one_column':
+			require '1column.phtml';
+			break;
+		case 'two_columns_left':
+			require '2columns-left.phtml';
+			break;
+		case 'two_columns_right':
+			require '2columns-right.phtml';
+			break;
+		case 'three_columns':
+		   require '3columns.phtml';
+			break;
+		default:
+			require '1column.phtml';
+			break;
+	}
+	?>

@@ -1,0 +1,328 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+
+global $var_vttheme; 
+
+	$home = '';
+	$l = $var_vttheme->getParam('layout_home');
+    if($l==2){
+    	$home ='home';
+    }else{
+    	$home = 'home-02';
+    }
+ 
+?>
+<div class="popup-new-bgr">
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('popup-newletter')->toHtml(); ?>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	var showpp=<?php echo Mage::getStoreConfig('ovansport_cfg/general/popup_new');?>;
+	if((showpp==1)&&(document.title=='Home page')&&(jQuery(window).width()>767))
+	{
+	var ever = getCookie("ever");
+	    if(ever)
+	    {
+	        jQuery('.popup-new-bgr').hide();
+	        return false;
+	    }
+	    else{
+	    	jQuery('.popup-new-bgr').show();
+	    }
+		jQuery('.close-popup').click(function(){
+			jQuery('.popup-new-bgr').hide();
+		});
+		jQuery('.popup-newletter a').click(function(){
+			jQuery(this).toggleClass('active');
+		})
+	}
+});
+</script>
+
+<!-- Is layout home -->
+<?php if($home=='home'){ ?>
+<div id="home-page-01">
+<div class="header-container">
+	<div class="header">   
+		<div class="box-header-mobile-01">
+			<div class="wrap-link">
+				<button class="btn-account"><?php echo $this->__("Account");?></button>
+				<?php echo $this->getChildHtml('topLinks') ?> 
+			</div>
+			<?php echo $this->getChildHtml('cart_sidebar') ?>
+		</div>
+		<script type="text/javascript">                
+			jQuery(document).ready(function($){  
+				cur_width = $( window ).width();
+				if(cur_width < 600){
+					//$('.box-header-02 .block-search').remove();
+					$('.box-header-mobile-01').append('<div class="wrap-block-cl"></div>');
+					$('.box-header-mobile-01 .wrap-block-cl').html($('.box-header-02 .wrap-block-cl').html());
+					$('.box-header-02 .wrap-block-cl').remove();
+					$('.box-phonenumber').remove();  
+
+					$(".wrap-link .links").hide();
+					$('.wrap-link button').click(function(){
+						$(".wrap-link .links").slideToggle("fast");
+					}); 
+					$(".wrap-block-cl > .block > ul").hide();
+					$('.wrap-block-cl > .block-language > div').click(function(){
+						$(".wrap-block-cl > .block-language > ul").slideToggle("fast");
+					});
+					$('.wrap-block-cl > .block-currency > div').click(function(){
+						$(".wrap-block-cl > .block-currency > ul").slideToggle("fast");
+					});
+
+					$(".box-header-02 .block-cart .block-content").hide();
+					 $('.box-header-02 .block-cart .block-title').click(function(){
+						$(".box-header-02 .block-cart .block-content").slideToggle("fast");
+					});
+					 
+				}
+			});
+		</script>
+
+		<div class="box-header-01">			
+			<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+			<div class="box-top">
+				<div class="container">
+					<div class="row">
+						<div class="call-us"><span class="call-us-icon">Call Us: <span class="phone-contact">005 477 388</span></span></div>
+							
+						<?php  //echo $this->getChildHtml('searchboxpro'); ?>
+						<?php echo $this->getChildHtml('topLinks') ?> 	
+					</div>	
+				</div>
+			</div>
+			<div class="box-bottom">											
+				<div class="container">
+					<div class="row">
+						<?php  echo $this->getChildHtml('topSearch'); ?>
+						<div class="wrap-block-cl">		
+							<div class="">
+								<div class="col-lg-7 col-md-7 col-sm-6">
+									<?php echo $this->getChildHtml('store_language') ?> 	
+									<?php echo $this->getChildHtml('currency') ?>
+								</div>
+								<div class="col-lg-5 col-md-5 col-sm-6">
+									<?php echo $this->getChildHtml('cart_sidebar') ?>
+								</div>
+							</div>
+						</div>  	
+					</div>
+				</div>
+			</div>
+		</div> 
+		<div id="vt_menu" class="wrap">               
+			<div class="container">
+				<div class="row">                       
+
+					<?php  
+					
+					if( $var_vttheme->getParam('menutype') == 'mega' ){
+						echo $this->getChildHtml('megaMenu');
+					} else {
+						echo $this->getChildHtml('topMenu');
+					} ?>                         
+				</div>
+			</div>  
+		</div>
+		<div id="mobile-nav">
+			<?php echo $this->getChildHtml('mobiMenu'); ?>
+		</div>               
+	</div>
+</div>
+</div>
+<?php } ?>
+<!--end layout home-->
+<?php if($home=='home-02'){ ?>
+<div id="home-page-02">
+<div class="header-container">
+	<div class="header">   
+		<div class="box-header-mobile-01">
+			<div class="wrap-link">
+				<button class="btn-account"><?php echo $this->__("Account");?></button>
+				<?php echo $this->getChildHtml('topLinks') ?> 
+			</div>
+			<button class="btn-addtocart"></button>
+		</div>
+		<script type="text/javascript">                
+			jQuery(document).ready(function($){  
+				cur_width = $( window ).width();
+				if(cur_width < 600){
+					//$('.box-header-02 .block-search').remove();
+					$('.box-header-mobile-01').append('<div class="wrap-block-cl"></div>');
+					$('.box-header-mobile-01 .wrap-block-cl').html($('#vt_menu .wrap-block-cl').html());
+					$('#vt_menu .wrap-block-cl').remove();
+					
+
+					$(".wrap-link .links").hide();
+					$('.wrap-link button').click(function(){
+						$(".wrap-link .links").slideToggle("fast");
+					}); 
+					$(".wrap-block-cl > .block > ul").hide();
+					$('.wrap-block-cl > .block-language > div').click(function(){
+						$(".wrap-block-cl > .block-language > ul").slideToggle("fast");
+					});
+					$('.wrap-block-cl > .block-currency > div').click(function(){
+						$(".wrap-block-cl > .block-currency > ul").slideToggle("fast");
+					});
+
+					$(".box-header-02 .block-cart .block-content").hide();
+					 $('.box-header-02 .block-cart .block-title').click(function(){
+						$(".box-header-02 .block-cart .block-content").slideToggle("fast");
+					});
+					 
+				}
+			});
+		</script>
+		
+		<div class="box-header-02">
+			<div class="wrap">
+				<div class="container">
+					<div class="row">
+						<div class="wrap-block-cl">			
+							<?php echo $this->getChildHtml('store_language') ?> 						
+							<?php echo $this->getChildHtml('currency') ?>															
+						</div>  	
+						<?php echo $this->getChildHtml('topLinks') ?> 		
+					</div>
+				</div>
+			</div>
+			<div class="wrap-mid-hd">
+				<div class="container">
+					<div class="row">
+						
+						<div class="box-left">
+							<div class="col-lg-2 col-md-2 col-sm-2">
+							<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+							</div>
+							<div class="col-lg-4 call-us-top col-md-4 col-sm-4">
+								<div class="call-us"><span class="call-us-icon">Call now: <span class="phone-contact">101 2268 999</span></span></div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6">							
+							<?php  //echo $this->getChildHtml('searchboxpro'); ?>
+								<div class="col-lg-7 search-top col-md-6 col-sm-10">
+									<?php  echo $this->getChildHtml('topSearch'); ?>
+								</div>
+								<div class="col-lg-5 cart-top col-md-6 col-sm-2">
+									<?php echo $this->getChildHtml('cart_sidebar') ?>
+								</div>
+							</div>
+						</div>
+						
+						
+						
+						<?php  //echo $this->getChildHtml('topSearch'); ?>
+					</div>
+				</div>
+			</div>
+		</div> 
+		<!--div class="box-header-02">
+			<div class="container">
+				<div class="row">
+					<a class="logo" href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>                    
+					<div class="wrap-sidebar">
+					<?php //echo $this->getChildHtml('cart_sidebar') ?>
+					</div>
+					
+					<div class="wrap">
+						<?php //echo $this->getChildHtml('topLinks') ?> 
+												
+					</div>
+					
+					
+					<?php  //echo $this->getChildHtml('topSearch'); ?>
+				</div>
+			</div>
+		</div--> 
+		
+
+		<div id="vt_menu" class="wrap">  
+			<div class="container">
+				<div class="row">
+					<?php  if( $var_vttheme->getParam('menutype') == 'mega' ){
+						echo $this->getChildHtml('megaMenu');
+					} else {
+						echo $this->getChildHtml('topMenu');
+					} ?>  
+					<?php  //echo $this->getChildHtml('searchboxpro'); ?>
+					<!--div class="wrap-block-cl">							     
+						<?php //echo $this->getChildHtml('currency') ?>
+						<?php //echo $this->getChildHtml('store_language') ?> 								
+					</div-->   
+				</div>
+			</div>
+		</div>
+		<div id="mobile-nav">
+			<?php echo $this->getChildHtml('mobiMenu'); ?>
+		</div>               
+	</div>
+</div>
+</div>
+<?php } ?>
+<?php
+include (dirname(__FILE__).'/new_cpanel.phtml');
+?>
+
+<script type="text/javascript">                
+	jQuery(document).ready(function($){
+		
+	menu_offset_top = $('#vt_menu').outerHeight();	
+	
+	function processScroll() {
+
+		var scrollTop = $( window ).scrollTop();
+
+		if ( scrollTop >= menu_offset_top) {
+
+			$('#vt_menu').addClass('subnav-fixed');
+
+		} else if (scrollTop <= menu_offset_top) {
+
+			$('#vt_menu').removeClass('subnav-fixed');
+
+		}
+
+	}
+
+	if($('#vt_menu')){
+
+		processScroll();
+
+		$( window ).scroll(function() {
+
+			processScroll();
+
+		});
+
+	}
+	
+});
+</script>
